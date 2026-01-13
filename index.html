@@ -7,6 +7,19 @@
     <title>Todo App</title>
   </head>
   <body>
-    <script src="scripts/main.js"></script>
+    <header>
+      <h1>Tasks</h1>
+    </header>
+
+    <main class="main-container">
+      <div class="task-input-container">
+        <input type="text" id="taskName" placeholder="task name..." />
+        <button class="add-task-btn">Add Task</button>
+      </div>
+      <div class="tasks-container">
+        <ul class="tasks-list"></ul>
+      </div>
+    </main>
+    <script src="scripts/main.js" type="module"></script>
   </body>
 </html>
