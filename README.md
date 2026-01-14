@@ -17,7 +17,7 @@ Simple todo app for managing tasks with persistent data using local storage.
 
 ## Demo
 
-[Live Preview]()
+[Live Preview](https://raw.githack.com/chrono-04/todo-app/main/index.html)
 
 ## Tech Stack
 
