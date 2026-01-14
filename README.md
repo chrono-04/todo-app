@@ -4,8 +4,8 @@ Simple todo app for managing tasks with persistent data using local storage.
 
 ## Features
 
-- Persistent Storage: Tasks stay saved even after refreshing the page using localStorage.
-- Priority System: Group tasks by priority levels (Important, Do Later).
+- Persistent Storage: Tasks stay saved even after refreshing the page using localStorage
+- Priority System: Group tasks by priority levels
 - Deadlines: Stay on schedule using due dates
 
 ## Currently Work In Progress
