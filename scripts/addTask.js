@@ -3,6 +3,11 @@ import { loadLocalStorage, saveToLocalStorage } from "./storage.js";
 
 function addTask() {
   const taskName = document.getElementById("taskName");
+  taskName.value = taskName.value.trim();
+  if (taskName.value === "") {
+    alert("Empty Field. Try again");
+    return;
+  }
 
   const data = {
     id: crypto.randomUUID(),
