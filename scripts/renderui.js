@@ -23,6 +23,7 @@ function renderUi() {
     task.classList.toggle("task-name");
     label.classList.toggle("label-name");
     div.classList.add("task-info");
+    div.style.textDecoration = isCompleted ? "line-through" : "none";
     div.appendChild(task);
     div.appendChild(label);
 
@@ -50,7 +51,6 @@ function renderUi() {
 
     // styling
     Object.assign(li.style, {
-      textDecoration: isCompleted ? "line-through" : "none",
       color: isCompleted ? "gray" : "ghostwhite",
       backgroundColor: isCompleted ? "#1F2127" : "#2B2F37",
       borderRadius: "10px",
