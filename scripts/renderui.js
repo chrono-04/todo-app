@@ -1,5 +1,6 @@
 import { completeTask } from "./completeTask.js";
 import { deleteTask } from "./deleteTask.js";
+import { editTask } from "./editTask.js";
 import { loadLocalStorage } from "./storage.js";
 
 function renderUi() {
@@ -13,25 +14,39 @@ function renderUi() {
   database.map(({ id, ...item }) => {
     const li = document.createElement("li");
     const isCompleted = item.isCompleted;
+    const label = document.createElement("p");
+    const task = document.createElement("p");
+    const div = document.createElement("div");
 
-    li.textContent = item.taskName;
+    task.textContent = item.taskName;
+    label.textContent = `#${item.label}`;
+    task.classList.toggle("task-name");
+    label.classList.toggle("label-name");
+    div.classList.add("task-info");
+    div.appendChild(task);
+    div.appendChild(label);
+
     li.dataset.id = id;
     li.dataset.isCompleted = item.isCompleted;
+    li.appendChild(div);
 
-    const span = document.createElement("span");
+    const actionDiv = document.createElement("div");
     const delBtn = document.createElement("button");
     const editBtn = document.createElement("button");
 
     editBtn.textContent = "Edit";
     editBtn.dataset.id = id;
-    delBtn.textContent = "🗑️";
+    delBtn.textContent = "Delete";
     delBtn.dataset.id = id;
-    editBtn.style.margin = "0 5px";
-    delBtn.style.margin = "0 5px";
+    editBtn.classList.toggle("action-btn");
+    editBtn.classList.toggle("edit-btn");
+    delBtn.classList.toggle("action-btn");
+    delBtn.classList.toggle("del-btn");
 
-    span.appendChild(editBtn);
-    span.appendChild(delBtn);
-    li.appendChild(span);
+    actionDiv.appendChild(editBtn);
+    actionDiv.appendChild(delBtn);
+    actionDiv.classList.toggle("action-container");
+    li.appendChild(actionDiv);
 
     // styling
     Object.assign(li.style, {
@@ -47,10 +62,7 @@ function renderUi() {
     taskList.appendChild(li);
 
     li.addEventListener("click", completeTask);
-    editBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      console.log(editBtn.dataset.id);
-    });
+    editBtn.addEventListener("click", editTask);
     delBtn.addEventListener("click", deleteTask);
   });
 }

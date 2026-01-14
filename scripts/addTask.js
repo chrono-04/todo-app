@@ -3,6 +3,7 @@ import { loadLocalStorage, saveToLocalStorage } from "./storage.js";
 
 function addTask() {
   const taskName = document.getElementById("taskName");
+  const label = document.getElementById("labels");
   taskName.value = taskName.value.trim();
   if (taskName.value === "") {
     alert("Empty Field. Try again");
@@ -12,6 +13,7 @@ function addTask() {
   const data = {
     id: crypto.randomUUID(),
     taskName: taskName.value,
+    label: label.value,
     isCompleted: false,
   };
 
