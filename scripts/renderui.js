@@ -19,7 +19,7 @@ function renderUi() {
     const div = document.createElement("div");
 
     task.textContent = item.taskName;
-    label.textContent = `#${item.label} | ${item.deadline}`;
+    label.textContent = `#${item.label} | ${item.date}`;
     task.classList.toggle("task-name");
     label.classList.toggle("label-name");
     div.classList.add("task-info");

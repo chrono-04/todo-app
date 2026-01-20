@@ -3,7 +3,29 @@ import { deleteTask } from "./deleteTask.js";
 import { editTask } from "./editTask.js";
 import { loadLocalStorage } from "./storage.js";
 
-function renderBySort(label) {
+function dateFormatter(d) {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function renderByDate(status, db) {
+  const d = new Date();
+  const currentDate = dateFormatter(d);
+  console.log(currentDate);
+
+  switch (status) {
+    case "today":
+      return db.filter((item) => item.date === currentDate);
+    case "upcoming":
+      return db.filter((item) => item.date > currentDate);
+    case "overdue":
+      return db.filter((item) => item.date < currentDate);
+  }
+}
+
+function renderByDeadline(taskStatus) {
   const taskList = document.querySelector(".tasks-list");
   const database = loadLocalStorage();
 
@@ -11,9 +33,10 @@ function renderBySort(label) {
     taskList.removeChild(taskList.firstChild);
   }
 
-  const highDatabase = database.filter((item) => item.label === label);
+  const updatedDatabase = renderByDate(taskStatus, database);
+  console.log(updatedDatabase);
 
-  highDatabase.map(({ id, ...item }) => {
+  updatedDatabase.map(({ id, ...item }) => {
     const li = document.createElement("li");
     const isCompleted = item.isCompleted;
     const label = document.createElement("p");
@@ -69,4 +92,4 @@ function renderBySort(label) {
   });
 }
 
-export { renderBySort };
+export { renderByDeadline };

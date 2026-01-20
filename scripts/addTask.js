@@ -15,7 +15,7 @@ function addTask() {
     id: crypto.randomUUID(),
     taskName: taskName.value,
     label: label.value,
-    deadline: date.value,
+    date: date.value,
     isCompleted: false,
   };
 
