@@ -8,23 +8,23 @@ const sortMenu = document.getElementById("sortButtons");
 renderUi();
 addTaskBtn.addEventListener("click", addTask);
 
-sortMenu.addEventListener("click", (event) => {
+sortMenu.addEventListener("input", (event) => {
   let target = event.target;
 
-  switch (target.id) {
-    case "sortAll":
+  switch (target.value) {
+    case "All":
       renderUi();
       break;
-    case "sortHigh":
+    case "High":
       renderBySort("High");
       break;
-    case "sortMedium":
+    case "Medium":
       renderBySort("Medium");
       break;
-    case "sortLow":
+    case "Low":
       renderBySort("Low");
       break;
-    case "sortBacklog":
+    case "Backlog":
       renderBySort("Backlog");
       break;
   }

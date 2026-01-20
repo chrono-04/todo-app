@@ -4,6 +4,7 @@ import { loadLocalStorage, saveToLocalStorage } from "./storage.js";
 function addTask() {
   const taskName = document.getElementById("taskName");
   const label = document.getElementById("labels");
+  const date = document.getElementById("dateInput");
   taskName.value = taskName.value.trim();
   if (taskName.value === "") {
     alert("Empty Field. Try again");
@@ -14,6 +15,7 @@ function addTask() {
     id: crypto.randomUUID(),
     taskName: taskName.value,
     label: label.value,
+    deadline: date.value,
     isCompleted: false,
   };
 
