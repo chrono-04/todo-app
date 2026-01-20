@@ -21,7 +21,7 @@ function renderBySort(label) {
     const div = document.createElement("div");
 
     task.textContent = item.taskName;
-    label.textContent = `#${item.label}`;
+    label.textContent = `#${item.label} | ${item.deadline}`;
     task.classList.toggle("task-name");
     label.classList.toggle("label-name");
     div.classList.add("task-info");
