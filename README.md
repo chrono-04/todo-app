@@ -14,6 +14,7 @@ Simple todo app for managing tasks with persistent data using local storage.
 - [x] Priority Tags
 - [x] Due Dates
 - [x] Responsive UI
+- [ ] Edit Tasks
 
 ## Demo
 
