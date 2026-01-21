@@ -113,7 +113,7 @@ header > h1 {
   background-color: #25292f;
   text-align: left;
   margin: 10px 0;
-  width: 40%;
+  width: 60%;
 }
 
 .tasks-list > li {
@@ -160,7 +160,17 @@ header > h1 {
 }
 
 /*Mobile Layout*/
-@media (max-width: 860px) {
+@media (max-width: 580px) {
+  .task-input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sort-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .action-container {
     display: flex;
     flex-direction: column;
