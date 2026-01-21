@@ -159,6 +159,19 @@ header > h1 {
   align-items: center;
 }
 
+/*Mobile Layout*/
+@media (max-width: 860px) {
+  .action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tasks-list {
+    width: 85%;
+  }
+}
+
 .task-name {
   font-size: 1rem;
 }
