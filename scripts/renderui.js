@@ -29,6 +29,11 @@ function renderUi() {
 
     li.dataset.id = id;
     li.dataset.isCompleted = item.isCompleted;
+    // preserve data for editing
+    li.dataset.taskName = item.taskName;
+    li.dataset.label = item.label;
+    li.dataset.date = item.date;
+
     li.appendChild(div);
 
     const actionDiv = document.createElement("div");
