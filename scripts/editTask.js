@@ -33,6 +33,16 @@ function editTask(e) {
   controlContainer.appendChild(saveBtn);
   controlContainer.appendChild(cancelBtn);
 
+  // class styling
+  li.classList.toggle("edit-form");
+  newTaskName.classList.toggle("edit-field");
+  newLabel.classList.toggle("edit-field");
+  newDate.classList.toggle("edit-field");
+  saveBtn.classList.toggle("action-btn");
+  saveBtn.classList.toggle("save-task-btn");
+  cancelBtn.classList.toggle("action-btn");
+  cancelBtn.classList.toggle("cancel-btn");
+
   while (li.firstChild) {
     li.removeChild(li.firstChild);
   }

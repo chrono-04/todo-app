@@ -195,3 +195,36 @@ li > .task-info {
   pointer-events: none;
   display: inline;
 }
+
+/* Edit mode */
+.edit-controls {
+  display: flex;
+}
+
+.edit-field {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.save-task-btn {
+  background-color: #11a461;
+  color: ghostwhite;
+  border: none;
+  border-radius: 5px;
+}
+
+.cancel-btn {
+  background-color: gray;
+  color: ghostwhite;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (max-width: 1100px) {
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: centert;
+  }
+}
