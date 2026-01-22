@@ -11,17 +11,17 @@ const overdueBtn = document.getElementById("overdueTasks");
 
 addTaskBtn.addEventListener("click", addTask);
 todayBtn.addEventListener("click", () => {
-  renderByDeadline("today");
+  renderByDeadline("Today");
   console.log("Tasks Today");
 });
 
 upcomingBtn.addEventListener("click", () => {
-  renderByDeadline("upcoming");
+  renderByDeadline("Upcoming");
   console.log("Upcoming Tasks");
 });
 
 overdueBtn.addEventListener("click", () => {
-  renderByDeadline("overdue");
+  renderByDeadline("Overdue");
   console.log("Overdue Tasks");
 });
 

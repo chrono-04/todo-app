@@ -16,11 +16,11 @@ function renderByDate(status, db) {
   console.log(currentDate);
 
   switch (status) {
-    case "today":
+    case "Today":
       return db.filter((item) => item.date === currentDate);
-    case "upcoming":
+    case "Upcoming":
       return db.filter((item) => item.date > currentDate);
-    case "overdue":
+    case "Overdue":
       return db.filter((item) => item.date < currentDate);
   }
 }
@@ -35,6 +35,10 @@ function renderByDeadline(taskStatus) {
 
   const updatedDatabase = renderByDate(taskStatus, database);
   console.log(updatedDatabase);
+
+  const taskTitle = document.querySelector(".task-title");
+  taskTitle.textContent = `${taskStatus}`;
+  taskTitle.style.color = "ghostwhite";
 
   updatedDatabase.map(({ id, ...item }) => {
     const li = document.createElement("li");

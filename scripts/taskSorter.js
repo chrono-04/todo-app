@@ -13,6 +13,10 @@ function renderBySort(label) {
 
   const highDatabase = database.filter((item) => item.label === label);
 
+  const taskTitle = document.querySelector(".task-title");
+  taskTitle.textContent = `Tasks: ${label}`;
+  taskTitle.style.color = "ghostwhite";
+
   highDatabase.map(({ id, ...item }) => {
     const li = document.createElement("li");
     const isCompleted = item.isCompleted;

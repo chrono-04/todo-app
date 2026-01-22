@@ -70,6 +70,10 @@ function renderUi() {
     editBtn.addEventListener("click", editTask);
     delBtn.addEventListener("click", deleteTask);
   });
+
+  const taskTitle = document.querySelector(".task-title");
+  taskTitle.textContent = "All Tasks";
+  taskTitle.style.color = "ghostwhite";
 }
 
 export { renderUi };
